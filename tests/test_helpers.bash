@@ -6,6 +6,7 @@ TEST_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # Paths to bats-support and bats-assert
 SUPPORT_DIR="${TEST_DIR}/bats-support"
 ASSERT_DIR="${TEST_DIR}/bats-assert"
+FILE_DIR="${TEST_DIR}/bats-file"
 
 # Verify that both dependencies exist
 if [ ! -d "$SUPPORT_DIR" ] || [ ! -d "$ASSERT_DIR" ]; then
@@ -16,6 +17,7 @@ fi
 # Load bats-support and bats-assert
 load "${SUPPORT_DIR}/load.bash"
 load "${ASSERT_DIR}/load.bash"
+load "${FILE_DIR}/load.bash"
 
 # Add both build/ and project root to PATH
 PATH="${PROJECT_ROOT}/build:${PROJECT_ROOT}:$PATH"
